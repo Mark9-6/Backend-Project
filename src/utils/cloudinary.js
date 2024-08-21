@@ -19,7 +19,17 @@ import fs from "fs"
             resource_type:"auto"
         });
         //upload successfully
-        console.log("file is uplaoaded on cloudinary" , response.url);
+        // console.log("file is uplaoaded on cloudinary" , response.url);
+        // console.log(response)
+       
+        try {
+            await fs.access(localFilePath);
+            await fs.unlink(localFilePath);
+        } catch (error) {
+            console.error("File does not exist or could not be deleted:", error);
+        }
+
+        
         return response;
     } catch (error) {
         fs.unlinkSync(localFilePath)

@@ -16,7 +16,7 @@ import fs from "fs"
         if(!localFilePath) return null;
         //uploading;
       const response = await cloudinary.uploader.upload(localFilePath,{
-            resource_type:"auto"
+            resource_type:"auto"                  // response will return many things including url , public id etc
         });
         //upload successfully
         // console.log("file is uplaoaded on cloudinary" , response.url);

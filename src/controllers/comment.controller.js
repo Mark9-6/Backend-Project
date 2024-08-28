@@ -75,8 +75,8 @@ const deleteComment = asyncHandler(async(req,res)=>{
     if(!commentId){
         throw new ApiError(400 , "Invalid commentId")
     }
-     const deltedComment = await Comment.findByIdAndDelete(commentId);
-     if(!deltedComment){
+     const deletedComment = await Comment.findByIdAndDelete(commentId);
+     if(!deletedComment){
         throw new ApiError(404 , "Comment not found")
      }
 

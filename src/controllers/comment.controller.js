@@ -1,8 +1,8 @@
 import mongoose, { isValidObjectId } from "mongoose";
-import { asyncHandler } from "../utils/asyncHandler";
-import { ApiError } from "../utils/ApiError";
+import { asyncHandler } from "../utils/asyncHandler.js";
+import { ApiError } from "../utils/ApiError.js";
 import { Comment } from "../models/comment.model.js";
-import { ApiResponse } from "../utils/ApiResponse";
+import { ApiResponse } from "../utils/ApiResponse.js";
 
 
 const getVideoComments = asyncHandler(async(req,res)=>{
@@ -67,7 +67,7 @@ const updateComment = asyncHandler(async(req,res)=>{
     }
     return res
     .status(200)
-    .json(200 , updatedComment , "Comment updated successfully");
+    .json(new ApiResponse(200 , updatedComment , "Comment updated successfully"));
 })
 
 const deleteComment = asyncHandler(async(req,res)=>{

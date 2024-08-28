@@ -58,6 +58,6 @@ const getSubscribedChannels = asyncHandler(async(req,res)=>{
 
 export {
     toggleSubscription,
-    getSubscribedChannels,
+    getUserChannelSubscribers,
     getSubscribedChannels
 }
